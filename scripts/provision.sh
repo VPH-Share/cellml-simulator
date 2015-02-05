@@ -10,6 +10,12 @@ pkgupdate
 pkginstall python-pip python-dev python-lxml
 sudo pip install -r requirements.txt
 #######################################
+log_msg "Installing CellML Simulator"
+take_dir ../vendors
+download https://cellml-simulator.googlecode.com/files/CSim-0.4.3-Linux.tar.gz
+extract CSim-0.4.3-Linux.tar.gz
+cd ..
+#######################################
 log "Configure SOAPLib to autostart"
 sudo cat initd.cellmlsimulator > /etc/init.d/cellmlsimulator
 sudo chmod +x /etc/init.d/cellmlsimulator
